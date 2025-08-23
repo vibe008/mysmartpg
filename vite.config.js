@@ -1,13 +1,10 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
-
-// https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
   base: "/",
   server: {
     proxy: {
-      // Proxy API requests in development
       "/api": {
         target: "https://admin.shivomgroup.com",
         changeOrigin: true,
@@ -19,9 +16,18 @@ export default defineConfig({
     assetsDir: "assets",
     rollupOptions: {
       output: {
-        assetFileNames: "assets/[name]-[hash][extname]",
+        assetFileNames: (assetInfo) => {
+          // Handle different asset types
+          const extType = assetInfo.name.split('.')[1];
+          if (extType === 'png' || extType === 'jpg' || extType === 'jpeg' || extType === 'gif' || extType === 'svg') {
+            return 'assets/images/[name]-[hash][extname]';
+          }
+          return 'assets/[name]-[hash][extname]';
+        },
       },
     },
+    // Optimize for better chunking
+    chunkSizeWarningLimit: 1000,
   },
   publicDir: "public",
 });
