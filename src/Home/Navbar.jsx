@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-const Logo1 = "../../Public/assets/Logo1.png";
-const ShreeLogo = "../public/assets/shree.jpg";
-const GooglePlay = "../public/assets/googlePlay.png";
+const Logo1 = "./assets/Logo1.png";
+const ShreeLogo = "../../public/assets/shree.jpg";
+const GooglePlay = "../../public/assets/googlePlay.png";
 const AppStore = "/assets/appStore.png";
 
 const Navbar = () => {
