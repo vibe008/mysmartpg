@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Logo1 from "../../Public/assets/Logo1.png";
-const ShreeLogo = "../../public/assets/shree.jpg";
-const GooglePlay = "../../public/assets/googlePlay.png";
-const AppStore = "/assets/appStore.png";
+import ShreeLogo from "../../Public/assets/shree.jpg";
+import GooglePlay from "../../Public/assets/googlePlay.png";
+import AppStore from "../../Public/assets/appStore.png";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
