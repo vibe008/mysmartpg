@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Responsive override: hide the GIF container on sub-lg screens */
+@media (max-width: 1023px) {
+  /* The GIF is wrapped inside a div with class 'rgt' in `src/Home/Girlpage.jsx` */
+  .rgt {
+    display: none !important;
+  }
+}

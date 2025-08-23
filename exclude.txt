@@ -1,0 +1,4 @@
+web_mysmartapp
+.git
+exclude.txt
+push_to_github.bat
