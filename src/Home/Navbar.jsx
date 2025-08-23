@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-const Logo1 = "./assets/Logo1.png";
+import Logo1 from "../../Public/assets/Logo1.png";
 const ShreeLogo = "../../public/assets/shree.jpg";
 const GooglePlay = "../../public/assets/googlePlay.png";
 const AppStore = "/assets/appStore.png";
