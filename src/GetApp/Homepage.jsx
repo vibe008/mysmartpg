@@ -1,8 +1,10 @@
 "use client";
 import React, { useEffect, useRef } from "react";
 import wowImage from "../../Public/assets/wow.png";
-
-const Homepage = () => {
+import treeBgImage from "../../Public/assets/TREE-BG-01.png";
+import carGif from "../../Public/assets/car.gif";
+import cyclistGif from "../../Public/assets/cyclist.gif";
+const Homepage = ({ setIsOpen }) => {
   const mainRef = useRef(null);
 
   useEffect(() => {
@@ -24,7 +26,8 @@ const Homepage = () => {
   return (
     <div
       ref={mainRef}
-      className="relative min-h-screen overflow-x-hidden bg-[url('/assets/TREE-BG-01.png')] bg-no-repeat bg-cover transition-colors duration-300 ease-in-out"
+      style={{ backgroundImage: `url(${treeBgImage})`,backgroundPosition:"bottom" }}
+      className="relative min-h-screen overflow-x-hidden bg-no-repeat bg-cover transition-colors duration-300 ease-in-out"
     >
       {/* Content Wrapper */}
       <div className="flex flex-wrap items-center justify-center gap-12 px-6 py-16 max-w-[1400px] mx-auto">
@@ -42,11 +45,22 @@ const Homepage = () => {
             Compatibility
           </h1>
           <h3 className="text-gray-600 font-light leading-8 mb-6 text-[clamp(1.2rem,3vw,1.5rem)]">
-            Tailored Applications for Every Platform
+            Tailored Applications for Every Platform <br /> Download Now
           </h3>
           <ul className="flex flex-wrap gap-4 mt-6 list-none justify-start max-[768px]:flex-col max-[768px]:items-center max-[768px]:gap-3">
             {["IOS", "ANDROID", "WINDOWS"].map((platform) => (
               <li
+              onClick={()=>{
+                if(platform === "IOS"){
+                  setIsOpen(true)
+                }
+                if(platform === "ANDROID"){
+                  setIsOpen(true)
+                }
+                if(platform === "WINDOWS"){
+                  window.open("https://web.mysmartpg.com/", "_blank");
+                }
+              }}
                 key={platform}
                 className="border border-black px-4 py-2 rounded-md text-[clamp(0.9rem,2.5vw,1rem)] cursor-pointer transition-colors duration-200 hover:bg-gray-100"
               >
@@ -67,14 +81,16 @@ const Homepage = () => {
       </div>
       {/* Moving Car */}
       <div
-        className="movingCar absolute bottom-0 left-[30%] bg-[url('/assets/car.gif')] bg-no-repeat bg-center bg-contain animate-moveRight
+      style={{ backgroundImage: `url(${carGif})`}}
+        className="movingCar absolute bottom-0 left-[30%] bg-no-repeat bg-center bg-contain animate-moveRight
     w-[clamp(180px,25vw,220px)] h-[clamp(60px,8vw,80px)]
   "
       ></div>
 
       {/* Moving Cyclist */}
       <div
-        className="movingCyclist absolute bottom-0 left-[38%] bg-[url('/assets/cyclist.gif')] bg-no-repeat bg-center bg-contain animate-moveRightSlow
+      style={{ backgroundImage: `url(${cyclistGif})`}}
+        className="movingCyclist absolute bottom-0 left-[38%] bg-no-repeat bg-center bg-contain animate-moveRightSlow
     w-[clamp(50px,10vw,60px)] h-[clamp(55px,10vw,70px)]
   "
       ></div>

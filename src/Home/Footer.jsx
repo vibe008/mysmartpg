@@ -122,8 +122,8 @@ const Footer = () => {
                       Label
                     </label>
                     <div className="flex rounded-lg shadow-sm h-[3rem]">
-                      <div className="py-2 bg-white text-gray-600  px-3 block w-full border-gray-200 shadow-sm rounded-s-lg focus:z-10 disabled:opacity-50 disabled:pointer-events-none">
-                        <p className="text-black text-sm">Start your journey</p>
+                      <div className="py-0 bg-white text-gray-600  px-3 flex w-full border-gray-200 shadow-sm rounded-s-lg focus:z-10 disabled:opacity-50 disabled:pointer-events-none  items-center">
+                        <p className="text-black text-sm p-0 m-0">Start your journey</p>
                       </div>
                       <a href="/GetApp" className="no-underline">
                         <button

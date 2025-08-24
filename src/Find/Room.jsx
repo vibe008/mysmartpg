@@ -45,7 +45,7 @@ const RoomCard = ({
       {/* Header with image and rating - TOP */}
       <div className="relative overflow-hidden w-full">
         <div
-          className={`h-32 bg-gradient-to-br ${bgGradient} flex items-center justify-center`}
+          className={`h-32 bg-gradient-to-br ${bgGradient} flex items-center justify-center h-[200px]`}
         >
           {/* Animated background pattern */}
           <div
@@ -297,20 +297,20 @@ const HostelRooms = () => {
         </div>
 
         {/* Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 max-w-7xl mx-auto">
-          <div style={{ ...fadeInStyle, animationDelay: "0s" }}>
+        <div className=" grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 max-w-7xl mx-auto flex flex-wrap">
+          <div style={{ ...fadeInStyle, animationDelay: "0s" ,width:"30%" ,}}>
             <Room1 />
           </div>
-          <div style={{ ...fadeInStyle, animationDelay: "0.1s" }}>
+          <div style={{ ...fadeInStyle, animationDelay: "0.1s" ,width:"30%" }}>
             <Room2 />
           </div>
-          <div style={{ ...fadeInStyle, animationDelay: "0.2s" }}>
+          <div style={{ ...fadeInStyle, animationDelay: "0.2s" ,width:"30%" }}>
             <Room3 />
           </div>
-          <div style={{ ...fadeInStyle, animationDelay: "0.3s" }}>
+          <div style={{ ...fadeInStyle, animationDelay: "0.3s" ,width:"30%" }}>
             <Room4 />
           </div>
-          <div style={{ ...fadeInStyle, animationDelay: "0.4s" }}>
+          <div style={{ ...fadeInStyle, animationDelay: "0.4s" ,width:"30%" }}>
             <Room5 />
           </div>
         </div>

@@ -22,7 +22,7 @@ import {
 } from "react-icons/fa";
 import { auth, provider, signInWithPopup } from "../firebase-config";
 import Footer from "../Home/Footer";
-const DownloadButton = ({  isDownloading, setIsDownloading, setIsOpen, isOpen }) => {
+const DownloadButton = ({ isDownloading, setIsDownloading, setIsOpen, isOpen }) => {
   const [apiData, setApiData] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [name, setName] = useState("");
@@ -99,17 +99,6 @@ const DownloadButton = ({  isDownloading, setIsDownloading, setIsOpen, isOpen })
     fetchData();
   }, []);
 
-  const handleButtonHover = (e) => {
-    e.currentTarget.style.transform = "scale(1.05)";
-    e.currentTarget.style.boxShadow = "0 15px 35px rgba(255, 193, 140, 0.4)";
-  };
-
-  const handleButtonLeave = (e) => {
-    e.currentTarget.style.transform = "scale(1)";
-    e.currentTarget.style.boxShadow = "0 8px 20px rgba(255, 193, 140, 0.2)";
-  };
-
-
   const saveUserData = async () => {
     const formData = new FormData();
     formData.append("name", name || "");
@@ -133,7 +122,7 @@ const DownloadButton = ({  isDownloading, setIsDownloading, setIsOpen, isOpen })
           }),
         }
       );
-      console.log("res", res);
+      console.log("downlod res", res);
       if (res.status === 201) {
         setIsOpen(false)
         Swal.fire({
@@ -175,6 +164,14 @@ const DownloadButton = ({  isDownloading, setIsDownloading, setIsOpen, isOpen })
         img_url: img_url,
         city: city
       }
+      if(!result){
+        Swal.fire({
+          title: `Login Required`,
+          text: "Please login to download the app",
+          icon: "warning"
+        })
+        return;
+      }
       localStorage.setItem('user', JSON.stringify(newuser));
       const res = await fetch(`https://admin.shivomgroup.com/hosteladmin/public/api/check-user-exists?email=${email}`)
       const data = await res.json()
@@ -187,19 +184,7 @@ const DownloadButton = ({  isDownloading, setIsDownloading, setIsOpen, isOpen })
         }).then((res) => {
           DownloadAPK()
         });
-        // try {
-        //   const downloadSuccessful = await downloadWithProgress(
-        //     apiData.data.file_path_url,
-        //     `MySmartPG_${apiData.data.version || "latest"}.apk`,
-        //     (percent) => {
-        //       console.log(`Downloaded: ${percent.toFixed(2)}%`);
 
-        //     }
-        //   );
-        //   console.log("downloadSuccessful", downloadSuccessful);
-        // } catch (err) {
-        //   console.error("❌ Failed to download APK:", err);
-        // }
       }
       else {
         await saveUserData({ name, email, mobile, img_url, city });
@@ -260,29 +245,43 @@ const DownloadButton = ({  isDownloading, setIsDownloading, setIsOpen, isOpen })
   return (
     <>
       {/* iOS Button */}
-      <button
+      {/* <button
         className="group relative bg-gradient-to-r from-amber-400 to-orange-400 text-amber-900 font-bold px-8 py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 overflow-hidden"
         onMouseEnter={handleButtonHover}
         onMouseLeave={handleButtonLeave}
         onClick={handleDownload}
         disabled={isDownloading || isLoading}
       >
+
         <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
         <div className="relative flex items-center gap-3">
           <FaApple className="text-2xl" />
+
           <span className="text-lg">For iOS</span>
         </div>
-      </button>
-
+      </button> */}
+      <div className="group relative bg-gradient-to-r from-amber-400 to-orange-400 text-amber-900 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 flex items-center justify-between px-8 py-4">
+        <FaApple className="text-2xl mr-2" />
+        <button
+          onClick={() => setIsOpen(true)}
+          className=" font-bold  "
+        >
+          For iOS
+        </button>
+      </div>
 
       <div>
         {/* Modal Toggle Button */}
-        <button
-          onClick={() => setIsOpen(true)}
-          className="group relative bg-gradient-to-r from-amber-400 to-orange-400 text-amber-900 font-bold px-8 py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 overflow-hidden"
-        >
-          Android APk
-        </button>
+
+        <div className="group relative bg-gradient-to-r from-amber-400 to-orange-400 text-amber-900 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 flex items-center justify-between px-8 py-4">
+          <FaAndroid className="text-2xl mr-2" />
+          <button
+            onClick={() => setIsOpen(true)}
+            className=" font-bold  "
+          >
+            For Android
+          </button>
+        </div>
 
         {/* Modal */}
         {isOpen && (
@@ -433,7 +432,7 @@ const FeedbackForm = ({ user, onSignOut, setIsOpen, isOpen }) => {
         formData.append("rating", rating.toString());
         formData.append("img_url", existingUser.photo || "");
         formData.append("location", existingUser.city);
-  
+
         const response = await fetch(
           "https://admin.shivomgroup.com/hosteladmin/public/api/reviews",
           {
@@ -450,7 +449,7 @@ const FeedbackForm = ({ user, onSignOut, setIsOpen, isOpen }) => {
         setSubmitSuccess(true);
         setReviewText("");
         setRating(5);
-  
+
         setTimeout(() => {
           setSubmitSuccess(false);
         }, 5000);
@@ -961,6 +960,13 @@ const AnimatedRatingPage = ({ setIsOpen, isOpen }) => {
             </div>
           </div>
         </div>
+        <div className="w-full flex flex-col items-center  px-4 transparent rounded-2xl  mt-5">
+          <div className="text-center mb-1">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 ">
+              Download Our App
+            </h2>
+          </div>
+        </div>
 
         <div className="flex flex-wrap justify-center gap-8 mt-8 mb-20">
           <DownloadButton
@@ -970,7 +976,7 @@ const AnimatedRatingPage = ({ setIsOpen, isOpen }) => {
             isOpen={isOpen}
           />
 
-          <a
+          {/* <a
             href="https://web.mysmartpg.com/"
             target="_blank"
             rel="noopener noreferrer"
@@ -983,7 +989,19 @@ const AnimatedRatingPage = ({ setIsOpen, isOpen }) => {
               <FaGlobe className="text-2xl" />
               <span className="text-lg">Web App</span>
             </div>
-          </a>
+          </a> */}
+          <div className="group relative bg-gradient-to-r from-amber-400 to-orange-400 text-amber-900 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 flex items-center justify-between px-8 py-4">
+            <FaGlobe className="text-2xl mr-2" />
+            <button
+              href="https://web.mysmartpg.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => window.open("https://web.mysmartpg.com/", "_blank")}
+              className=" font-bold  "
+            >
+               Web App
+            </button>
+          </div>
         </div>
 
         <div ref={reviewsRef} className="w-full max-w-7xl mx-auto">
@@ -1131,7 +1149,8 @@ const GetApp = () => {
   return (
     <>
       <div>
-        <Homepage />
+
+        <Homepage setIsOpen={setIsOpen} isOpen={isOpen} />
         <AnimatedRatingPage
           setIsOpen={setIsOpen}
           isOpen={isOpen}

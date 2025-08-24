@@ -2,7 +2,7 @@ import React from "react";
 import Footer from "../Home/Footer";
 import RoomBookingApp from "./Room";
 import Hostel from "./Hostel";
-const backgroundGif = "../assets/search-bg-6.gif";
+import backgroundGif from "../../Public/assets/search-bg-6.gif";
 
 const Findpage = () => {
   return (
@@ -75,7 +75,7 @@ const Findpage = () => {
       <div className="container mx-auto px-4 py-8">
         <RoomBookingApp />
         <div className="mt-12">
-          <Hostel />
+          {/* <Hostel /> */}
         </div>
       </div>
       <Footer />

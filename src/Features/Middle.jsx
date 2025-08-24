@@ -1,6 +1,8 @@
 "use client";
 import React, { useEffect, useRef } from "react";
-
+import smartapp from "../../Public/assets/smartapp.png";
+import differentfromothers from "../../Public/assets/differentfromothers.png";
+import tenantapp from "../../Public/assets/tenantapp.png";
 const featureData = [
   {
     id: 1,
@@ -68,21 +70,21 @@ const Middle = () => {
       title: "SPECIAL S-MART FEATURES",
       description:
         "MANAGE: FOOD MENU, CUSTOM SALES, MONTHLY REPORTS, OFFERS ZONE, NOTIFY ON WHATSAPP, TENANT NOTICE, COMPLAINT & LEADS",
-      imgSrc: "../assets/smartapp.png",
+      imgSrc: smartapp,
       alt: "Special S-Mart Features",
     },
     {
       title: "DIFFERENT FROM OTHERS",
       description:
         "MANAGE: KITCHEN STOCKS, EMPLOYEE ATTENDANCE & SALARY, ELECTRICITY BILL AND SMART TENANT & EMPLOYEE VERIFICATION",
-      imgSrc: "../assets/differentfromothers.png",
+      imgSrc:differentfromothers,
       alt: "Different from Others",
     },
     {
       title: "S-MART TENANT APP",
       description:
         "FOR TRANSPARENCY, EASY RECORDS AND HASSLE FREE COMMUNICATION.",
-      imgSrc: "../assets/tenantapp.png",
+      imgSrc:tenantapp,
       alt: "S-Mart Tenant App",
     },
   ];

@@ -5,10 +5,10 @@ import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-const Now = "../assets/now.png";
-const HostelSofa = "../assets/hostelSofa.png";
-const OneApp = "../assets/oneapp.png";
-const Wow1 = "../assets/wow1.png";
+import now from "../../Public/assets/now.png";
+import hostelSofa from "../../Public/assets/hostelSofa.png";
+import oneApp from "../../Public/assets/oneapp.png";
+import wow1 from "../../Public/assets/wow1.png";
 
 const carouselData = [
   {
@@ -21,7 +21,7 @@ const carouselData = [
     description1: "S-MART WAY TO RENT YOUR PROPERTY",
     buttonColor: "from-orange-500 to-red-500",
     buttonText: "NOW",
-    imgSrc: Now,
+    imgSrc: now,
     alt: "S-MART property management interface on mobile device",
     textSize: "text-3xl lg:text-5xl",
     h4Size: "text-xl lg:text-3xl",
@@ -39,7 +39,7 @@ const carouselData = [
       "Say goodbye to stress & troubles Hello to efficiency with our innovative System.",
     buttonColor: "from-slate-600 to-gray-700",
     buttonText: "One Stop Solution",
-    imgSrc: HostelSofa,
+    imgSrc: hostelSofa,
     alt: "Comfortable hostel room with modern furniture and natural lighting",
     textSize: "text-3xl lg:text-5xl",
     h4Size: "text-xl lg:text-3xl",
@@ -57,7 +57,7 @@ const carouselData = [
       "Free from paper work, provides you S-Mart team, all on just one click with super secured cloud storage",
     buttonColor: "from-teal-500 to-cyan-500",
     buttonText: "One app",
-    imgSrc: OneApp,
+    imgSrc: oneApp,
     alt: "Mobile app interface showing property management features",
     textSize: "text-3xl lg:text-5xl",
     h4Size: "text-xl lg:text-3xl",
@@ -79,7 +79,7 @@ const carouselData = [
     ],
     buttonColor: "from-blue-500 to-indigo-500",
     buttonText: "WOW",
-    imgSrc: Wow1,
+    imgSrc: wow1,
     alt: "Device compatibility icons with platform names",
     textSize: "text-3xl lg:text-5xl",
     h4Size: "text-xl lg:text-3xl",

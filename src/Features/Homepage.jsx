@@ -5,9 +5,9 @@ import SmartFeaturesForYou from "./Features";
 import AllSlider from "../Home/AllSlider";
 import Footer from "../Home/Footer";
 import servicesImage from "../../Public/assets/SERVICES.png";
-const treeBgImage = "../../Public/assets/TREE-BG-01.png";
-const carGif = "../../Public/assets/car.gif";
-const cyclistGif = "../../Public/assets/cyclist.gif";
+import treeBgImage from "../../Public/assets/TREE-BG-01.png";
+import carGif from "../../Public/assets/car.gif";
+import cyclistGif from "../../Public/assets/cyclist.gif";
 
 const Homepage = () => {
   const [imageError, setImageError] = useState(false);
@@ -36,12 +36,10 @@ const Homepage = () => {
     <>
       <div
         ref={mainRef}
-        className="relative min-h-screen overflow-x-hidden bg-no-repeat bg-cover transition-colors duration-300 ease-in-out"
-        style={{ backgroundImage: `url(${treeBgImage})` }}
+        className="relative min-h-screen overflow-x-hidden bg-no-repeat bg-cover transition-colors duration-300 ease-in-out "
+        style={{ backgroundImage: `url(${treeBgImage})`,backgroundPosition:"bottom" }}
       >
-        {/* Content Wrapper */}
         <div className="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-20 h-auto max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 pt-16 sm:pt-20 lg:pt-24 pb-8">
-          {/* Left Content */}
           <div className="max-w-[600px] text-center lg:text-left">
             <h1 className="text-4xl sm:text-5xl lg:text-[5.5rem] font-light text-gray-500 mb-4">
               Ranked#1
@@ -55,8 +53,7 @@ const Homepage = () => {
             </h3>
           </div>
 
-          {/* Right Content */}
-          <div className="mt-5 flex justify-center">
+            <div className="mt-5 flex justify-center">
             {!imageError ? (
               <img
                 src={servicesImage}
@@ -72,7 +69,6 @@ const Homepage = () => {
           </div>
         </div>
 
-        {/* Moving Elements */}
         <div
           className="absolute bottom-0 left-[-25%] bg-no-repeat bg-center bg-contain animate-[moveRight_22s_linear_infinite]"
           style={{
@@ -90,11 +86,11 @@ const Homepage = () => {
           }}
         />
 
-        {/* Footer Background Elements */}
         <div className="absolute inset-x-0 bottom-0 h-16 sm:h-20 " />
+
+        
       </div>
 
-      {/* Other Sections */}
       <Middle />
       <AllSlider />
       <SmartFeaturesForYou />

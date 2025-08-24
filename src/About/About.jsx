@@ -2,14 +2,14 @@
 import { useEffect } from "react";
 import Footer from "../Home/Footer";
 // Import images from assets
-const aboutBg = "../public/assets/about-bg.jpg";
-const heartImg = "../public/assets/heart.png";
-const conscientiousIcon = "../public/assets/conscientiousIcon.png";
-const relationshipIcon = "../public/assets/relationshipicon.png";
-const solutionsIcon = "../public/assets/Solutionsicon.png";
-const innovativeIcon = "../public/assets/Innovativeicon.png";
-const artisticIcon = "../public/assets/Articticicon.png";
-const trustworthyIcon = "../public/assets/Trustworthyicon.png";
+import aboutBg from "../../Public/assets/about-bg.jpg";
+import heartImg from "../../Public/assets/heart.png";
+import conscientiousIcon from "../../Public/assets/conscientiousIcon.png";
+import relationshipIcon from "../../Public/assets/relationshipicon.png";
+import solutionsIcon from "../../Public/assets/Solutionsicon.png";
+import innovativeIcon from "../../Public/assets/Innovativeicon.png";
+import artisticIcon from "../../Public/assets/Articticicon.png";
+import trustworthyIcon from "../../Public/assets/Trustworthyicon.png";
 
 const AboutUs = () => {
   const handleVisitClick = () => {

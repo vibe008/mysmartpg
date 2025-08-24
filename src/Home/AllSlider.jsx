@@ -3,7 +3,14 @@ import React, { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-
+import registration from "../../Public/assets/registration.png";
+import accountant from "../../Public/assets/accountant.png";
+import team from "../../Public/assets/team.png";
+import multiplebusiness from "../../Public/assets/multiplebusiness.png";
+import businessplatform from "../../Public/assets/businessplatform.png";
+import smartapp from "../../Public/assets/smartapp.png";
+import differentfromothers from "../../Public/assets/differentfromothers.png";
+import ok from "../../Public/assets/ok.mp4";
 gsap.registerPlugin(ScrollTrigger);
 
 const SectionWrapper = ({
@@ -194,8 +201,8 @@ const SectionWrapper = ({
 const RegistrationBoard = () => (
   <SectionWrapper
     title="Admission and Registration"
-    image="/assets/registration.png"
-    video="/assets/ok.mp4"
+    image={registration}
+    video={ok}
     variant="spiral"
     data={[
       {
@@ -230,8 +237,8 @@ const RegistrationBoard = () => (
 const SmartDigitalAccount = () => (
   <SectionWrapper
     title="Smart Digital Account"
-    image="/assets/accountant.png"
-    video="/assets/ok.mp4"
+    image={accountant}
+    video={ok}
     variant="wave"
     data={[
       {
@@ -266,8 +273,8 @@ const SmartDigitalAccount = () => (
 const MultipleUser = () => (
   <SectionWrapper
     title="Multiple User Management"
-    image="/assets/team.png"
-    video="/assets/ok.mp4"
+    image={team}
+    video={ok}
     variant="magnetic"
     data={[
       {
@@ -297,8 +304,8 @@ const MultipleUser = () => (
 const MultipleBusiness = () => (
   <SectionWrapper
     title="Unified Business Dashboard"
-    image="/assets/multiplebusiness.png"
-    video="/assets/ok.mp4"
+    image={multiplebusiness}
+    video={ok}
     variant="morphing"
     data={[
       {
@@ -333,8 +340,8 @@ const MultipleBusiness = () => (
 const OnlineBusinessPlatform = () => (
   <SectionWrapper
     title="Online Business Platform"
-    image="/assets/businessplatform.png"
-    video="/assets/ok.mp4"
+    image={businessplatform}
+    video={ok}
     variant="liquid"
     data={[
       {
@@ -369,8 +376,8 @@ const OnlineBusinessPlatform = () => (
 const SPECIALSMARTFEATURES = () => (
   <SectionWrapper
     title="Special Smart Features"
-    image="/assets/smartapp.png"
-    video="/assets/ok.mp4"
+    image={smartapp}
+    video={ok}
     variant="spiral"
     data={[
       {
@@ -405,8 +412,8 @@ const SPECIALSMARTFEATURES = () => (
 const BusinessDashboard = () => (
   <SectionWrapper
     title="Unique Differentiators"
-    image="/assets/differentfromothers.png"
-    video="/assets/ok.mp4"
+    image={differentfromothers}
+    video={ok}
     variant="wave"
     isLastSection={true}
     data={[

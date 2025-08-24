@@ -3,7 +3,16 @@ import { useTypewriter } from "react-simple-typewriter";
 // Removed Next.js Image import as we'll use regular img tag
 import React, { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap/dist/gsap";
-
+import roomicon from "../../Public/assets/roomicon.png";
+import registration from "../../Public/assets/registration.png";
+import accountant from "../../Public/assets/accountant.png";
+import team from "../../Public/assets/team.png";
+import multiplebusiness from "../../Public/assets/multiplebusiness.png";
+import businessplatform from "../../Public/assets/businessplatform.png";
+import smartapp from "../../Public/assets/smartapp.png";
+import differentfromothers from "../../Public/assets/differentfromothers.png";
+import tenant from "../../Public/assets/tenant.png";
+import girl from "../../Public/assets/girl.gif";
 // We'll import and register ScrollTrigger only in useEffect
 // Using useEffect ensures this only runs on the client side
 
@@ -72,62 +81,62 @@ const NewHomePage = () => {
       title: "ROOM SEATS MANAGEMENT",
       description:
         "MANAGE YOUR ROOMS, SEATS, SERVICES, RECORDS & RENTS SMARTLY",
-      imgSrc: "../assets/roomicon.png",
+      imgSrc: roomicon,
       alt: "Room Seats Management",
     },
     {
       title: "ADMISSIONS & REGISTRATION",
       description:
         "KEEP DIGITAL RECORDS OF TENANT, ALLOT SEATS/ROOM & MANAGE DIGITAL ADMISSION WITH ZERO PAPER WORK.",
-      imgSrc: "../assets/registration.png",
+      imgSrc: registration,
       alt: "Admissions & Registration",
     },
     {
       title: "S-MART DIGITAL ACCOUNTANT",
       description:
         "S-MART BILLING FOR RENT COLLECTION & PAYMENTS, KEEP RECORDS OF EXPENSE WITH CATEGORIES, & PROFIT-LOSS REPORT",
-      imgSrc: "../assets/accountant.png",
+      imgSrc: accountant,
       alt: "S-Mart Digital Accountant",
     },
     {
       title: "MULTIPLE USERS",
       description:
         "MANAGE YOUR BUSINESSES BY YOUR S-MART TEAM WORK, MAKE ROLES & RESPONSIBILITIES.",
-      imgSrc: "../assets/team.png",
+      imgSrc: team,
       alt: "Multiple Users",
     },
     {
       title: "ONE DASHBOARD FOR MULTIPLE BUSINESSES.",
       description: "CREATE MULTIPLE ACCOUNTS ON 1 S-MART APP.",
-      imgSrc: "../assets/multiplebusiness.png",
+      imgSrc: multiplebusiness,
       alt: "One Dashboard for Multiple Businesses",
     },
     {
       title: "ONLINE BUNSINESS PLATFORM",
       description:
         "MARKET YOUR S-MART PROPERTY ONLINE, GET MORE LEADS & CONVERT LEADS INTO TENANT MORE FASTER",
-      imgSrc: "../assets/businessplatform.png",
+      imgSrc: businessplatform,
       alt: "Online Business Platform",
     },
     {
       title: "SPECIAL S-MART FEATURES",
       description:
         "MANAGE: FOOD MENU, CUSTOM SALES, MONTHLY REPORTS, OFFERS ZONE, NOTIFY ON WHATSAPP, TENANT NOTICE, COMPLAINT & LEADS",
-      imgSrc: "../assets/smartapp.png",
+      imgSrc: smartapp,
       alt: "Special S-Mart Features",
     },
     {
       title: "DIFFERENT FROM OTHERS",
       description:
         "MANAGE; KITCHEN STOCKS, EMPLOYEE ATTENDANCE & SALARY, ELECTRICITY BILL AND SMART TENANT & EMPLOYEE VERIFICATION",
-      imgSrc: "../assets/differentfromothers.png",
+      imgSrc: differentfromothers,
       alt: "Different from Others",
     },
     {
       title: "S-MART TENANT APP",
       description:
         "FOR TRANSPARENCY, EASY RECORDS AND HASSLE FREE COMMUNICATION.",
-      imgSrc: "../assets/tenant.png",
+      imgSrc: tenant,
       alt: "S-Mart Tenant App",
     },
   ];
@@ -427,7 +436,7 @@ const NewHomePage = () => {
               <div className="rgt opacity-100 lg:-mb-[5rem] h-full flex justify-center items-center">
                 <div className="relative w-full max-w-[400px] h-[450px]">
                   <img
-                    src="/assets/girl.gif"
+                    src={girl}
                     alt="home"
                     className="object-contain w-full h-full"
                     style={{ maxWidth: "400px" }}

@@ -129,7 +129,7 @@ const Navbar = () => {
         <div className={`bg-black ${!scrolled ? "h-12" : "h-16"} w-full flex items-center  ${scrolled ? "fixed top-0 z-50 px-[10rem]" : "px-[15rem]"}`}>
           {/* Left - Nav Links */}
           {scrolled && (
-            <div className="w-[100px] h-[100px] mr-[10rem]">
+            <div className=" mr-[10rem] absolute top-5 left-0 w-40 ml-3 h-20">
               <img
                 src={Logo1}
                 alt="S-Mart Logo - PG and Hostel Management Solution"
